@@ -25,4 +25,7 @@ if r.status_code == 200:
         if r.status_code == 200:
             assignments = r.json()
             for assignment in assignments:
-                print(f"- {assignment['name']} (ID: {assignment['id']})")
+                if assignment['due_at'] != None:
+                    print(f"- {assignment['name']} (ID: {assignment['id']})")
+                
+                #print(f"- {assignment['name']} (ID: {assignment['id']})")
